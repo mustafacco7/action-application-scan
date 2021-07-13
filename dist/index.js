@@ -1043,7 +1043,7 @@ async function run() {
         if(mode == null) mode = "local";
 
         let api_url_param= "";
-        if(api_url != null) api_url_param = `-e API_URL=${api_url}`;
+        if(api_url != null && api_url != "") api_url_param = `-e API_URL=${api_url}`;
 
         console.log('starting the scan');
         console.log('github run id :' + currentRunnerID);
