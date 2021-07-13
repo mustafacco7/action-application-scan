@@ -1053,7 +1053,7 @@ async function run() {
 
      
         await exec.exec(`docker pull ${docker_name} -q`);
-        let command = (`docker run --user root -v ${workspace}:/src/:rw --network="host" ${api_url_param} -e REPO_URL=${repoUrl} -e QC_API_KEY=${token} -e diff_mode="1" -e MODE=${mode} -e INSTANCE_URL=${instance_url} -e BRANCH=${branch} -t ${docker_name} sf-scan`);
+        let command = (`docker run --user root -v ${workspace}:/src/:rw --network="host" ${api_url_param} -e REPO_URL=${repoUrl} -e QC_API_KEY=${token} -e diff_mode="1" -e MODE=${mode} -e INSTANCE_URL=${instance_url} -e BRANCH=${branch} -t ${docker_name} snow-scan`);
 
 
         try {
