@@ -17,4 +17,5 @@ steps:
     uses: qualityclouds/snow-full-scan@v0.0.1
     with:
       token: 'your-token'
+      instance_url: 'https://123.service-now.com'
 ```

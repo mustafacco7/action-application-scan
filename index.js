@@ -11,12 +11,16 @@ async function run() {
         let ref = process.env.GITHUB_REF;
         let token = core.getInput('token');
         let mode = core.getInput('mode');
+        let api_url = core.getInput('api_url');
         let instance_url = core.getInput('instance_url');
         let docker_name = "qualityclouds/pipeline-servicenow";
        
         let branch = ref.replace("refs/heads/", "")
 
         if(mode == null) mode = "local";
+
+        let api_url_param= "";
+        if(api_url != null) api_url_param = `-e API_URL=${repoUrl}`;
 
         console.log('starting the scan');
         console.log('github run id :' + currentRunnerID);
@@ -26,7 +30,7 @@ async function run() {
 
      
         await exec.exec(`docker pull ${docker_name} -q`);
-        let command = (`docker run --user root -v ${workspace}:/src/:rw --network="host" -e REPO_URL=${repoUrl} -e QC_API_KEY=${token} -e diff_mode="1" -e MODE=${mode} -e INSTANCE_URL=${instance_url} -e BRANCH=${branch} -t ${docker_name} sf-scan`);
+        let command = (`docker run --user root -v ${workspace}:/src/:rw --network="host" ${api_url_param} -e REPO_URL=${repoUrl} -e QC_API_KEY=${token} -e diff_mode="1" -e MODE=${mode} -e INSTANCE_URL=${instance_url} -e BRANCH=${branch} -t ${docker_name} sf-scan`);
 
 
         try {
