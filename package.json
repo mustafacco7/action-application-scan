@@ -1,6 +1,6 @@
 {
   "name": "snow-full-scan",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Qualityclouds full scan action",
   "main": "index.js",
   "scripts": {
