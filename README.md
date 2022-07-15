@@ -17,5 +17,4 @@ steps:
     uses: qualityclouds/action-application-scan@1.0.0
     with:
       token: 'your-token'
-      instance_url: 'https://123.service-now.com'
 ```
