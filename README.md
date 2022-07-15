@@ -14,7 +14,7 @@ To obtain an API key, contact your Quality Clouds admin. If you're an admin, che
 ```
 steps:
   - name: Quality Clouds Build Check for Servicenow
-    uses: qualityclouds/action-snow-full-scan@v0.0.5
+    uses: qualityclouds/action-application-scan@1.0.0
     with:
       token: 'your-token'
       instance_url: 'https://123.service-now.com'
